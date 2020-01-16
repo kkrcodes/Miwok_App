@@ -8,12 +8,10 @@
     <TextView
         android:id="@+id/miwok_word"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/MiwokWordStyle" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/english_word"
-        style="@style/EnglishWordStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
