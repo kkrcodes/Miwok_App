@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setCustomOnClickListener(R.id.colors, ColorsActivity.class);
         setCustomOnClickListener(R.id.phrases, PhrasesActivity.class);
     }
+
     private void setCustomOnClickListener(final int resourceID, final Class categoryClass) {
         //Identify the category
         TextView category = findViewById(resourceID);
