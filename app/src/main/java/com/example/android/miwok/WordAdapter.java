@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -47,8 +48,16 @@ public class WordAdapter extends ArrayAdapter<Word> {
         TextView miwokTranslationView = listItemView.findViewById(R.id.miwok_word);
         miwokTranslationView.setText(currentWord.getMiwokTranslation());
 
-        // Return the whole list item layout (containing 2 TextViews) so that it can be shown in
-        // the ListView.
+        ImageView wordImageView = listItemView.findViewById(R.id.word_image);
+
+        if(currentWord.hasImage()) {
+            wordImageView.setImageResource(currentWord.getImageResourceId());
+            wordImageView.setVisibility(View.VISIBLE);
+        } else {
+            wordImageView.setVisibility(View.GONE);
+        }
+
+        // Return the list item layout w/ the two translations and the image for the word
         return listItemView;
     }
 }
