@@ -74,6 +74,9 @@ public class Word {
         return mImageResourceId;
     }
 
+    /**
+     * Returns whether or not there is an image for this word.
+     */
     public boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDED;
     }
