@@ -84,7 +84,7 @@ public class Word {
     }
 
     /**
-     * Get the raw audio resource ID
+     * Get the audio resource ID of the word
      */
     public int getAudioResourceId() {
         return mAudioResourceId;
