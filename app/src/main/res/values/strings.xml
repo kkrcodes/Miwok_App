@@ -30,4 +30,7 @@
 
     <!-- Image placeholder -->
     <string name="image_placeholder">Image for word</string>
+
+    <!-- Play icon placeholder -->
+    <string name="play_placeholder">Image for word</string>
 </resources>
