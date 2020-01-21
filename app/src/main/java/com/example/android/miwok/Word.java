@@ -28,15 +28,22 @@ public class Word {
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 
     /**
+     * Raw audio resource ID
+     */
+    private int mAudioResourceId;
+
+    /**
      * Create a new Word object with the default and miwok translation
      *
      * @param defaultTranslation is the word in a language that the user is already familiar with
      *                           (such as English)
      * @param miwokTranslation   is the word in the Miwok language
+     * @param audioResourceId    is the audio pronunciation for the word
      */
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation,  int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
     }
 
     /**
@@ -45,11 +52,13 @@ public class Word {
      *                           (such as English)
      * @param miwokTranslation   is the word in the Miwok language
      * @param imageResourceId    is the image for the word
+     * @param audioResourceId    is the audio pronunciation for the word
      */
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceId;
+        mAudioResourceId = audioResourceId;
     }
 
     /**
@@ -72,6 +81,13 @@ public class Word {
      */
     public int getImageResourceId() {
         return mImageResourceId;
+    }
+
+    /**
+     * Get the raw audio resource ID
+     */
+    public int getAudioResourceId() {
+        return mAudioResourceId;
     }
 
     /**
