@@ -15,15 +15,15 @@
  */
 package com.example.android.miwok;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
+/**
+ * Main activity to load the fragments in the app
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -31,24 +31,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-        setCustomOnClickListener(R.id.numbers, NumbersActivity.class);
-        setCustomOnClickListener(R.id.family, FamilyActivity.class);
-        setCustomOnClickListener(R.id.colors, ColorsActivity.class);
-        setCustomOnClickListener(R.id.phrases, PhrasesActivity.class);
-    }
 
-    private void setCustomOnClickListener(final int resourceID, final Class categoryClass) {
-        //Identify the category
-        TextView category = findViewById(resourceID);
-        //Set onClickListener to view
-        category.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Create intent to open category
-                Intent openCategoryIntent = new Intent(v.getContext(), categoryClass);
-                //Start category activity
-                startActivity(openCategoryIntent);
-            }
-        });
+        // Find the view pager that will allow the user to swipe between fragments
+        ViewPager viewPager = findViewById(R.id.viewpager);
+
+        // Create an adapter that knows which fragment should be shown on each page
+        CategoryAdapter adapter = new CategoryAdapter(getSupportFragmentManager());
+
+        // Set the adapter onto the view pager
+        viewPager.setAdapter(adapter);
     }
 }
