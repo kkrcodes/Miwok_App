@@ -24,3 +24,8 @@ Screenshots
 -----------
 <img src="images/home.jpg" width="270" height="585" alt="Home" title="Home">
 <img src="images/tab-2.jpg" width="270" height="585" alt="Tab 2" title="Tab 2">
+
+License
+-------
+The content of this repository is licensed under a
+[GNU General Public License v3.0](LICENSE).
